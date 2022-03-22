@@ -1,0 +1,24 @@
+services:
+  opatjs:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: /opat-js/start_opat.sh
+    shm_size: 24gb
+    ports:
+    - $PORT:3000
+    stdin_open: true
+    environment:
+    - XDG_DATA_HOME=$HOME
+    - XDG_CONFIG_HOME=$HOME/.config
+    - HOME=$HOME
+    - USER=$USER
+    volumes:
+    - /usr/local/certificates:/certificates
+    - $HOME:$HOME
+    - $HOME/vscode-server-lwll:$HOME/.vscode-server
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
+version: '2.3'
