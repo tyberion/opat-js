@@ -34,3 +34,9 @@ This project was created with [Create React App](https://github.com/facebook/cre
 
 Enter the project directory and run `npm install`. To run the app locally, run `npm start`. To [deploy to GitHub pages](https://create-react-app.dev/docs/deployment/#github-pages),
 run `npm run deploy`.
+
+## Docker
+Run the docker container by running:
+```
+env PORT=[local opat-js port] docker-compose -f opatjs_compose.yml up
+```
